@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/profil_profil"
-        android:name="com.example.android2_1.ui.profil.ProfilFragment"
+        android:name="com.example.android2_1.ui.profil.ProfileFragment"
         android:label="Profil"
         tools:layout="@layout/fragment_notifications" />
 

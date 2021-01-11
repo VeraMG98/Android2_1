@@ -14,7 +14,9 @@ import android.widget.ImageView;
 
 import com.example.android2_1.R;
 
-public class ProfilFragment extends Fragment {
+import static android.app.Activity.RESULT_OK;
+
+public class ProfileFragment extends Fragment {
     ImageView icon;
 
     @Override
@@ -33,7 +35,9 @@ public class ProfilFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Uri uri = data.getData();
-        icon.setImageURI(uri);
+        if (requestCode == 1 && resultCode == RESULT_OK && data !=null) {
+            Uri uri = data.getData();
+            icon.setImageURI(uri);
+        }
     }
 }

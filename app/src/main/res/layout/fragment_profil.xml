@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.profil.ProfilFragment">
+    tools:context=".ui.profil.ProfileFragment">
 
     <ImageView
         android:id="@+id/profil_icon"
