@@ -24,9 +24,15 @@
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
-        android:id="@+id/profil_profil"
-        android:name="com.example.android2_1.ui.profil.ProfileFragment"
-        android:label="Profil"
+        android:id="@+id/profile_profile"
+        android:name="com.example.android2_1.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/form_fragment"
+        android:name="com.example.android2_1.FormFragment"
+        android:label="Form"
         tools:layout="@layout/fragment_notifications" />
 
 </navigation>
