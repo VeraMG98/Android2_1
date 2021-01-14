@@ -41,7 +41,6 @@ public class FormFragment extends Fragment {
         String text = editText.getText().toString().trim();
         String time = getTime();
         Note note = new Note(text, time);
-        Log.e("NOTE", "" + note.getTitle() + " " + note.getDate());
         Bundle bundle = new Bundle();
         bundle.putSerializable("note", note);
         getParentFragmentManager().setFragmentResult("rk_form", bundle);

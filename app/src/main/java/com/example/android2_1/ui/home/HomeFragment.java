@@ -58,12 +58,7 @@ public class HomeFragment extends Fragment {
                 new AlertDialog.Builder(getContext())
                         .setTitle("Хотите удалить ?")
                         .setMessage("Запись будет удалена")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                adapter.remove(pos);
-                            }
-                        })
+                        .setPositiveButton("OK", (dialog, which) -> adapter.remove(pos))
                         .setNegativeButton("Нет", null)
                         .show();
             }

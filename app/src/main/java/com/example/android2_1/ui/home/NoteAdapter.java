@@ -1,6 +1,5 @@
 package com.example.android2_1.ui.home;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import java.util.ArrayList;
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final ArrayList<Note> list;
     private OnItemClickListener onItemClickListener;
-    private Context context;
 
     public NoteAdapter() {
         list = new ArrayList<>();
@@ -60,7 +58,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public void remove(int pos) {
         list.remove(pos);
-        notifyDataSetChanged();
+        notifyItemRemoved(pos);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -77,7 +75,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                 onItemClickListener.longClick(getAdapterPosition());
                 return true;
             });
-
         }
 
         public void onBind(Note note) {
