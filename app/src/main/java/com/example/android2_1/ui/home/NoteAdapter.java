@@ -69,8 +69,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             super(itemView);
             txtTitle = itemView.findViewById(R.id.txt_title);
             txtDate = itemView.findViewById(R.id.txt_date);
-            itemView.setOnClickListener(v ->
-                    onItemClickListener.onClick(getAdapterPosition()));
+            itemView.setOnClickListener(v -> onItemClickListener.onClick(getAdapterPosition()));
             itemView.setOnLongClickListener(v -> {
                 onItemClickListener.longClick(getAdapterPosition());
                 return true;

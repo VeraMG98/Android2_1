@@ -35,4 +35,10 @@
         android:label="Form"
         tools:layout="@layout/fragment_notifications" />
 
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.example.android2_1.ui.board.BoardFragment"
+        android:label="fragment_board"
+        tools:layout="@layout/fragment_board" />
+
 </navigation>
