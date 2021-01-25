@@ -1,7 +1,5 @@
 package com.example.android2_1.ui.board;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.android2_1.Descriptions;
 import com.example.android2_1.OnItemClickListener;
 import com.example.android2_1.R;
@@ -20,7 +19,6 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     private OnItemClickListener onItemClickListener;
 
     public BoardAdapter() {
-
     }
 
     @NonNull
@@ -48,14 +46,14 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
         Descriptions descriptions = new Descriptions();
         TextView txtTitle, txtDescription;
-        ImageView imgIcon;
         Button button;
+        LottieAnimationView animationView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTitle = itemView.findViewById(R.id.txt_title_board);
             txtDescription = itemView.findViewById(R.id.txt_title_board2);
-            imgIcon = itemView.findViewById(R.id.img_board);
+            animationView = itemView.findViewById(R.id.lottie_layer_name);
             button = itemView.findViewById(R.id.btn_start);
             button.setOnClickListener(v -> onItemClickListener.onClick(getAdapterPosition()));
         }
@@ -63,7 +61,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
         public void onBind(int position) {
             txtTitle.setText(descriptions.getTitle(position));
             txtDescription.setText(descriptions.getDescription(position));
-            imgIcon.setImageResource(descriptions.getIcon(position));
+            animationView.setAnimation(descriptions.getIcon(position));
             if (position == 2)
                 button.setVisibility(View.VISIBLE);
         }

@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.example.android2_1.Descriptions;
 import com.example.android2_1.Prefs;
 import com.example.android2_1.R;
 import com.example.android2_1.ui.board.BoardFragment;
@@ -25,6 +27,7 @@ import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
     ImageView icon;
+    LottieAnimationView animationView, animationView1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +35,11 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
         icon = view.findViewById(R.id.profil_icon);
         icon.setOnClickListener(v -> mGetContext.launch("image/*"));
+        animationView = view.findViewById(R.id.lottie1);
+        animationView1 = view.findViewById(R.id.lottie2);
+        animationView.setAnimation(R.raw.animaition2);
+        animationView1.setAnimation(R.raw.animation1);
+
         setHasOptionsMenu(true);
         return view;
     }

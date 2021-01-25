@@ -3,9 +3,9 @@ package com.example.android2_1;
 public class Descriptions {
     public int getIcon(int pos) {
         int[] icons = new int[] {
-                R.drawable.fast_icon,
-                R.drawable.free_icon,
-                R.drawable.powerful
+                R.raw.animation1,
+                R.raw.animaition2,
+                R.raw.animation3
         };
         return icons[pos];
     }
