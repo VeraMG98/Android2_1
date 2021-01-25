@@ -1,38 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/cardview_dark_background"
     tools:context=".ui.profile.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/profil_icon"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/ic_account"/>
+    <FrameLayout
+        android:background="@drawable/profile_bg"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
 
-    <TextView
-        android:id="@+id/name"
-        android:text="Name"
-        android:layout_margin="6dp"
+    <LinearLayout
+        android:id="@+id/l_2"
+        android:background="@drawable/bg_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="200dp"
+        android:baselineAligned="false">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessLeaf" />
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="2.5"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name"
+                android:text="@string/vera_mengel"
+                android:textColor="#2F4F4F"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MyStyle."/>
+
+            <TextView
+                android:id="@+id/second_name"
+                android:text="@string/android_developer"
+                android:textColor="#C0C0C0"
+                android:textSize="18sp"
+                android:layout_below="@id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MyStyle."/>
+
+            <LinearLayout
+                android:layout_below="@id/second_name"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/_358"
+                        android:textSize="20sp"
+                        android:textColor="#2F4F4F"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/MyStyle."/>
+
+                    <TextView
+                        android:id="@+id/phone"
+                        android:text="@string/followers"
+                        android:textColor="#C0C0C0"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/MyStyle."/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:text="@string/_5"
+                        android:textColor="#2F4F4F"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/MyStyle."/>
+
+                    <TextView
+                        android:textSize="15sp"
+                        android:text="@string/rating"
+                        android:textColor="#C0C0C0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/MyStyle."/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="22dp"
+        app:cardCornerRadius="16dp">
 
-    <TextView
-        android:id="@+id/second_name"
-        android:text="Second Name"
-        android:layout_margin="6dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/profil_icon"
+            android:background="@drawable/bg_edit"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:src="@drawable/mane_icon"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/todo" />
+    </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/phone"
-        android:text="+996000000000"
-        android:layout_margin="6dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_below="@id/l_2"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <TextView
+            android:text="@string/my_works"
+            android:textSize="25sp"
+            android:textColor="#2F4F4F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyStyle."/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -10,4 +10,14 @@
     <string name="title">Title</string>
     <string name="skip">SKIP</string>
     <string name="log_out">LOG OUT</string>
+    <string name="sort_alf">Сортировать по алфавиту</string>
+    <string name="sort_time">Сортировка по времени</string>
+    <string name="todo">TODO</string>
+    <string name="vera_mengel">Vera Mengel</string>
+    <string name="android_developer">Android developer</string>
+    <string name="_358">358</string>
+    <string name="followers">Followers</string>
+    <string name="_5">5+</string>
+    <string name="rating">Rating</string>
+    <string name="my_works">My works</string>
 </resources>

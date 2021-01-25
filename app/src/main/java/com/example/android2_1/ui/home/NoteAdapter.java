@@ -13,6 +13,9 @@ import com.example.android2_1.OnItemClickListener;
 import com.example.android2_1.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final ArrayList<Note> list;
@@ -20,9 +23,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public NoteAdapter() {
         list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(new Note("Text", i + ""));
-        }
     }
 
     @NonNull
@@ -45,7 +45,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public void addItem(Note note) {
         list.add(0, note);
-        notifyDataSetChanged();
+        notifyItemInserted(list.indexOf(0));
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -61,8 +61,24 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         notifyItemRemoved(pos);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public void setList(List<Note> list) {
+        this.list.clear();
+        this.list.addAll(list);
+        notifyDataSetChanged();
+    }
 
+    public void setItem(Note note, int id) {
+        list.set(id, note);
+        notifyDataSetChanged();
+    }
+
+    public void sortList(List<Note> sort) {
+        list.clear();
+        list.addAll(sort);
+        notifyDataSetChanged();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtTitle, txtDate;
 
         public ViewHolder(@NonNull View itemView) {

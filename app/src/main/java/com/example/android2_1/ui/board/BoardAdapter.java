@@ -18,10 +18,9 @@ import com.example.android2_1.R;
 
 public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> {
     private OnItemClickListener onItemClickListener;
-    private final Context context;
 
-    public BoardAdapter(Context context) {
-        this.context = context;
+    public BoardAdapter() {
+
     }
 
     @NonNull
@@ -61,11 +60,10 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
             button.setOnClickListener(v -> onItemClickListener.onClick(getAdapterPosition()));
         }
 
-        @SuppressLint("UseCompatLoadingForDrawables")
         public void onBind(int position) {
             txtTitle.setText(descriptions.getTitle(position));
             txtDescription.setText(descriptions.getDescription(position));
-            imgIcon.setImageDrawable(context.getResources().getDrawable(descriptions.getIcon(position)));
+            imgIcon.setImageResource(descriptions.getIcon(position));
             if (position == 2)
                 button.setVisibility(View.VISIBLE);
         }

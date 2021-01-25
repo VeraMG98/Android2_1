@@ -17,8 +17,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.android2_1.Prefs;
 import com.example.android2_1.R;
 import com.example.android2_1.ui.board.BoardFragment;
+
+import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
     ImageView icon;
@@ -51,8 +54,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.skip) {
-            BoardFragment.prefs.deleteStatus();
-            getActivity().finish();
+            new Prefs(requireContext()).deleteStatus();
+            requireActivity().finish();
             return true;
         } else
             return super.onOptionsItemSelected(item);

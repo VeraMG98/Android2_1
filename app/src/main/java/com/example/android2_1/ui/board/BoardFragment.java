@@ -17,9 +17,10 @@ import android.widget.Button;
 import com.example.android2_1.OnItemClickListener;
 import com.example.android2_1.Prefs;
 import com.example.android2_1.R;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class BoardFragment extends Fragment {
-    public static Prefs prefs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,8 +33,11 @@ public class BoardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ViewPager2 viewPager2 = view.findViewById(R.id.view_pager);
-        BoardAdapter adapter =  new BoardAdapter(getContext());
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        BoardAdapter adapter =  new BoardAdapter();
         viewPager2.setAdapter(adapter);
+        new TabLayoutMediator(tabLayout, viewPager2,
+                ((tab, position) -> tab.setText(""))).attach();
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onClick(int pos) {
@@ -42,7 +46,6 @@ public class BoardFragment extends Fragment {
 
             @Override
             public void longClick(int pos) {
-
             }
         });
         view.findViewById(R.id.btn_skip).setOnClickListener(v -> {
@@ -51,7 +54,7 @@ public class BoardFragment extends Fragment {
     }
 
     private void close() {
-        prefs = new Prefs(requireContext());
+        Prefs prefs = new Prefs(requireContext());
         prefs.saveBoardStatus();
         NavController navController = Navigation.findNavController(requireActivity(),
                 R.id.nav_host_fragment);

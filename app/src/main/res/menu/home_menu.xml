@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sort_for_alf"
+        android:title="@string/sort_alf"
+        />
+
+    <item
+        android:id="@+id/sort_for_time"
+        android:title="@string/sort_time"
+        />
+
+</menu>

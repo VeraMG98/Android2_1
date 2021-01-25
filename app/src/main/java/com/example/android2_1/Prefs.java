@@ -10,15 +10,15 @@ public class Prefs {
         preferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
     }
 
-    public  boolean isShown() {
+    public  Boolean isShown() {
         return preferences.getBoolean("isShown", false);
     }
 
     public void saveBoardStatus() {
-        preferences.edit().putBoolean("isShow", true).apply();
+         preferences.edit().putBoolean("isShow", true).apply();
     }
 
     public void deleteStatus() {
-        preferences.edit().clear().apply();
+        preferences.edit().remove("isShow").apply();
     }
 }
